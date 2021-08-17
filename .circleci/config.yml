@@ -19,6 +19,7 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       - slack/notify:
+          channel: SLACK_DEFAULT_CHANNEL 
           custom: |
             {
               "blocks": [
@@ -39,4 +40,4 @@ workflows:
   send-notification:
     jobs:
       - notify:
-          context: slack-secrets
+          context: SLACK_ACCESS_TOKEN
